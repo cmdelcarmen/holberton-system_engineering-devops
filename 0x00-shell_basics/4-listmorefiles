@@ -1,1 +1,3 @@
-x 5-listfilesdigitonly 6
+#!/bin/bash
+ls -al
+
