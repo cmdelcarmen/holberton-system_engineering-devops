@@ -1,1 +1,1 @@
-file grep -w HOLBERTON *
+file -m my-magic HOLBERTON*  
