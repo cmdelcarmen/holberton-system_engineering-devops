@@ -1,2 +1,1 @@
-sudo apt install telnet
-telnet towel.blinkenlights.nl
+cat < /dev/tcp/towel.blinkenlights.nl/23
