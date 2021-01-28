@@ -1,1 +1,2 @@
-#!/bin/bashchown betty:holberton _hello
+#!/bin/bashchown 
+sudo chown -L betty:holberton _hello 
