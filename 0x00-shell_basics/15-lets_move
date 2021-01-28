@@ -1,2 +1,2 @@
-#!/bin/bash
+#nux how to go to preivous directory!/bin/bash
 mv [[:upper:]]* /tmp/u
