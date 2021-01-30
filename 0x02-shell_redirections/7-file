@@ -1,0 +1,4 @@
+#!/bin/bash
+file="\*\\'\"Holberton School\"\'\\*$\?\*\*\*\*\*:)"
+echo "Holberton School" > "\*\\'\"Holberton School\"\'\\*$\?\*\*\*\*\*:)"
+cat "Holberton"
