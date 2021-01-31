@@ -1,4 +1,3 @@
 #!/bin/bash
-file="\*\\\'\"Holberton School\"\'\\\*$\?\*\*\*\*\*:)"
-echo "Holberton School" > "\*\\'\"Holberton School\"\'\\*$\?\*\*\*\*\*:)"
-
+file="\*\\\'\"Holberton School\"\'\\\*\$\?\*\*\*\*\*\:)"
+echo "Holberton School" > "\*\\\'\"Holberton School\"\'\\\*\$\?\*\*\*\*\*\:)"
