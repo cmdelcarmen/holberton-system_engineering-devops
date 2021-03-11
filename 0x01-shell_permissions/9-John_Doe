@@ -1,2 +1,2 @@
 #!/bin/bash
-orrection of "15. Symbolic links"
+chmod 753 hello
