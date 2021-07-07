@@ -4,6 +4,6 @@
 #expression matching method
 
 ARGV.each do |input|
-	h = input.scan(/h[0-9a-zA-Z_]*n/).join
+	h = input.scan(/h[0-9a-zA-Z_]*\W*n/).join
 	puts h
 end
