@@ -4,6 +4,6 @@
 #expression matching method
 
 ARGV.each do |input|
-	h = input.scan(/hbt{1,4}n/).join
+	h = input.scan(/hbt+n/).join
 	puts h
 end
