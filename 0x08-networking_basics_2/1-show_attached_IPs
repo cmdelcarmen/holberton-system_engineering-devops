@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Scripts displays all IPs that are active
+ifconfig | grep 'inet'
