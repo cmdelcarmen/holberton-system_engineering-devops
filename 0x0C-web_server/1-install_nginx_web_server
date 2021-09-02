@@ -3,6 +3,6 @@
 # to specified requirements.
 
 sudo apt-get update
-sudo apt-get nginx -y
+sudo apt-get install nginx -y
 echo "Holberton School" | sudo tee "/var/www/html/index.html"
 sudo service nginx restart
