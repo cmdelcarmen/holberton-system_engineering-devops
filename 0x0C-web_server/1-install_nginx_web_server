@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script that configures a new Ubuntu machine
+# to specified requirements.
+
+sudo apt-get update
+sudo apt-get nginx -y
+echo "Holberton School" | sudo tee "/var/www/html/index.html"
+sudo service nginx restart
