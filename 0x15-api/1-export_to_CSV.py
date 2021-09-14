@@ -22,5 +22,5 @@ if __name__ == "__main__":
     with open("{}.csv".format(emp_ID), 'w') as cvs_file:
         for value in emp_tasks:
             cvs_file.write(
-                    '"{}", "{}", "{}", "{}"\n'.format(
+                    '"{}","{}","{}","{}"\n'.format(
                         emp_ID, username, value['completed'], value['title']))
