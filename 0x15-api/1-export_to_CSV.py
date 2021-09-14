@@ -14,7 +14,7 @@ if __name__ == "__main__":
     emp_ID = argv[1]
     response = requests.get(
             'https://jsonplaceholder.typicode.com/users/{}'.format(emp_ID))
-    emp = response.json()['name']
+    emp = response.json()['username']
 
     # getting a list of tasks completed
     response = requests.get(
