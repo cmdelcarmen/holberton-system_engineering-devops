@@ -8,7 +8,6 @@ import requests
 
 if __name__ == "__main__":
     emp_dict = {}
-    task_list = []
 
     for emp in requests.get(
                         'https://jsonplaceholder.typicode.com/users').json():
@@ -16,7 +15,7 @@ if __name__ == "__main__":
         tasks = requests.get(
                 'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
                     emp_id)).json()
-
+        task_list = []
         for field in tasks:
             task = {'task': field['title'],
                     'completed': field['completed'],
