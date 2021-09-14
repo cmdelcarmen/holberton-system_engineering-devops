@@ -5,32 +5,23 @@
 '''
 import json
 import requests
-from sys import argv
-
 
 if __name__ == "__main__":
+    emp_dict = {}
+    task_list = []
 
-    users = requests.get(
-            'https://jsonplaceholder.typicode.com/users').json()
+    for emp in requests.get(
+                        'https://jsonplaceholder.typicode.com/users').json():
+        emp_id = emp.get('id')
+        tasks = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.format(emp_id)).json()
 
-    emp_profile = {}
-    emp_list = []
+        for field in tasks:
+            task = {'task': field['title'],
+                    'completed': field['completed'],
+                    'username': emp.get('username')
+                    }
+            task_list.append(task) 
+        emp_dict[emp_id] = task_list
 
-    for user in users:
-
-        emp_ID = user['id']
-        user_prof = requests.get(
-                        'https://jsonplaceholder.typicode.com/todos?userId={}'
-                        .format(emp_ID)).json()
-        emp_name = user['name']
-
-        for idx in user_prof:
-            emp_profile = {
-                        'task': idx['title'],
-                        'completed': idx['completed'],
-                        'username': emp_name}
-            emp_list.append(emp_profile)
-        emp_dict = {emp_ID: emp_list}
-
-        with open("todo_all_employees.json", 'w') as json_file:
-            json.dump(emp_dict, json_file)
+        with open('todo_all_employees.json', 'w') as export:
+            json.dump(emp_dict, export)
