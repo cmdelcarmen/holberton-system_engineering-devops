@@ -13,14 +13,16 @@ if __name__ == "__main__":
     for emp in requests.get(
                         'https://jsonplaceholder.typicode.com/users').json():
         emp_id = emp.get('id')
-        tasks = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.format(emp_id)).json()
+        tasks = requests.get(
+                'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
+                    emp_id)).json()
 
         for field in tasks:
             task = {'task': field['title'],
                     'completed': field['completed'],
                     'username': emp.get('username')
                     }
-            task_list.append(task) 
+            task_list.append(task)
         emp_dict[emp_id] = task_list
 
         with open('todo_all_employees.json', 'w') as export:
