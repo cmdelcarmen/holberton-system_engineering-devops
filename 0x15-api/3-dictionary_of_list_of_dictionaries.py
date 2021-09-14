@@ -30,7 +30,7 @@ if __name__ == "__main__":
                         'completed': idx['completed'],
                         'username': emp_name}
             emp_list.append(emp_profile)
+            emp_dict = {emp_ID: emp_list}
 
         with open("todo_all_employees.json", 'w') as json_file:
-            emp_dict = {emp_ID: emp_list}
             json.dump(emp_dict, json_file)
