@@ -15,14 +15,10 @@ if __name__ == "__main__":
             'https://jsonplaceholder.typicode.com/users/{}'.format(emp_ID))
     emp = response.json()['name']
 
-    # print(emp)
-
     response = requests.get(
             'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
                 emp_ID))
     emp_tasks = response.json()
-
-    # print(emp_tasks, len(emp_tasks))
 
     emp_completed = 0
     task_list = []
@@ -32,7 +28,7 @@ if __name__ == "__main__":
             emp_completed += 1
             task_list.append(value['title'])
 
-    print("Employee {} is done with tasks({}/{})".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         emp, emp_completed, len(emp_tasks)))
 
     for index in range(0, len(task_list)):
