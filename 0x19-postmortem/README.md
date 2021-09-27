@@ -1,20 +1,20 @@
-Project instructions:  
+*Project instructions:*  
   
-"Using one of the web stack debugging projects issue
-or an outage you have personally faced, write a postmortem. Most
-of you never have faced an outage, so just get creative and invent your own."
+*"Using one of the web stack debugging projects issue*
+*or an outage you have personally faced, write a postmortem. Most*
+*of you never have faced an outage, so just get creative and invent your own."*
   
-I decided to invent my own.  
+*I decided to invent my own.*  
   
 # Postmortem  
   
-Outage **start** time: Monday, September 27 at 3:06 PM Eastern Standard Time.  
-Outage **end** time: Monday, September 27 at 5:27 PM Eastern Standard Time.  
+• Outage **start** time: Monday, September 27 at 3:06 PM Eastern Standard Time.  
+• Outage **end** time: Monday, September 27 at 5:27 PM Eastern Standard Time.  
   
-What occurred:  
-What users experienced:  
-Percentage of users affected: About 25% to 30%.  
-Root cause of the problem:  
+• What occurred:  
+• What users experienced:  
+• Percentage of users affected: About 25% to 30%.  
+• Root cause of the problem:  
   
 ## Timeline  
 • When was issue detected:  
