@@ -20,19 +20,16 @@
 • When was issue detected: Early afternoon at 3:06 PM EST.  
 • How was issue detected: A large portion of our clients started calling customer service.  
 • Actions taken: Unable to access our own dashboard because of the outage, we had to rely on Twitter to communicate withour customers.  
-• Debugging path taken:  
-• Who was the issue escalated to:  
-• How was the incident resolved:  
+• Debugging path taken: We immidietly restarted the systems and validated all metadata.  
+• Who was the issue escalated to: Head of the AWS S3 Service Deparment. 
+• How was the incident resolved: Servers were restarted.    
   
 ## Root cause and resolution
-• Deatiled explination of what caused the problem: An engineer was debugging an issue with our billing system when he accidentally mistyped a command. 
-• Detailed explination of how the problem was fixed:  
+• Deatiled explination of what caused the problem: An engineer was debugging an issue with our billing system when he accidentally mistyped a command. The engineer meant to execute a command intended to remove only a small number of servers running one of the S3 subsystems. Unfortunately, one of the inputs to the command was entered incorrectly resulting in a larger set of servers being removed. These servers supported other major systems taht manage data resulting in catastrophic outages. Restarting these servers took much longer than anticipated resulting in other subsystems that rely on them to malfunction. AWS has experienced massive growth over the last several years and the process of restarting these services and running the necessary safety checks to validate the integrity of the metadata took longer than expected. 
+• Detailed explination of how the problem was fixed: After validating all data and fully restarting the system, and taking cara of all the backlogged requests, the issue was fixed
   
 ## Corrective and preventative measures:  
 Things that can be improved/fixed:  
-•  
-•  
-•  
-•  
-•  
-•  
+•  We will modify our tool to prevent it from removing too much capacity too quickly and to prevent capacity from being removed when any subsystem reaches its minimum required capacity.  
+• Reprioritize work to partition one of the affected subsystems into smaller “cells,” which was planned for later this year but we will now begin right away.  
+• Status Health Dashboard now runs across multiple AWS regions so that customers don’t have to rely on Twitter to learn about the health of their cloud infrastructure in case of another outage  
