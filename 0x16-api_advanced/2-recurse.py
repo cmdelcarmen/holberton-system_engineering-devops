@@ -8,6 +8,6 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], a=None):
+def recurse(subreddit, hot_list=[]):
     '''comments'''
     return None
