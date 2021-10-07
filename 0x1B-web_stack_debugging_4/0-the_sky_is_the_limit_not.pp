@@ -1,5 +1,12 @@
-# Script allows multiple petitons at the same time in a nginx server
-exec{'sed':
-  path    => '/bin',
-  command => "sed -i '5s/.*/ULIMIT=\"-n 2000\"/' /etc/default/nginx"
+# Script increases the nginx user limit
+
+file {'fix-nginx':
+  ensure  => present,
+  path    => '/etc/default/nginx',
+  content => 'ULIMIT="-n 4096"'
+}
+
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
 }
