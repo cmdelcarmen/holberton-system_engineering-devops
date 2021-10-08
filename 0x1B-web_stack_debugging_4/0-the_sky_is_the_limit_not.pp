@@ -1,12 +1,7 @@
 # Script increases the nginx user limit
-
-file {'fix-nginx':
-  ensure  => present,
-  path    => '/etc/default/nginx',
-  content => 'ULIMIT="-n 4096"'
+exec { 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 5000\"/g" /etc/default/nginx':
+  path => '/usr/bin:/usr/sbin:/bin',
 }
-
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+-> exec {'nginx restart':
+  command => '/usr/sbin/service nginx restart',
 }
